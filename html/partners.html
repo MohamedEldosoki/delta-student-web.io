@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Partners | Learning Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/partners.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="logo.svg" alt="StudyBuddy Logo" class="logo">
+      </div>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#"><i class="fas fa-home"></i> Overview</a></li>
+          <li><a href="#"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+          <li><a href="#"><i class="fas fa-tasks"></i> Tasks</a></li>
+          <li><a href="#"><i class="fas fa-book"></i> Courses</a></li>
+          <li class="active"><a href="#"><i class="fas fa-users"></i> Study Partners</a></li>
+          <li><a href="#"><i class="fas fa-chart-line"></i> Analytics</a></li>
+          <li><a href="#"><i class="fas fa-folder"></i> Resources</a></li>
+          <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <header class="content-header">
+        <h1>Study Partners</h1>
+        <div class="header-actions">
+          <div class="search-container">
+            <input type="text" id="partnerSearch" placeholder="Search partners...">
+            <i class="fas fa-search"></i>
+          </div>
+          <button class="btn btn-primary" id="findPartnersBtn">
+            <i class="fas fa-plus"></i> Find New Partners
+          </button>
+        </div>
+      </header>
+
+      <!-- Filter Bar -->
+      <section class="filter-bar">
+        <div class="filter-group">
+          <label for="subjectFilter">Subject:</label>
+          <select id="subjectFilter">
+            <option value="all">All Subjects</option>
+            <option value="calculus">Calculus</option>
+            <option value="physics">Physics</option>
+            <option value="chemistry">Chemistry</option>
+            <option value="computerScience">Computer Science</option>
+            <option value="algebra">Algebra</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="availabilityFilter">Availability:</label>
+          <select id="availabilityFilter">
+            <option value="all">Any Time</option>
+            <option value="weekdays">Weekdays</option>
+            <option value="weekends">Weekends</option>
+            <option value="evenings">Evenings</option>
+            <option value="mornings">Mornings</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="ratingFilter">Rating:</label>
+          <select id="ratingFilter">
+            <option value="all">Any Rating</option>
+            <option value="4+">4+ Stars</option>
+            <option value="3+">3+ Stars</option>
+          </select>
+        </div>
+        <div class="filter-tags" id="filterTags">
+          <!-- Dynamic filter tags will be added here via JavaScript -->
+        </div>
+      </section>
+
+      <!-- Current Partners Section -->
+      <section class="partners-section">
+        <div class="section-header">
+          <h2>Your Study Groups</h2>
+          <button class="btn btn-outline" id="groupSettingsBtn">
+            <i class="fas fa-cog"></i> Group Settings
+          </button>
+        </div>
+        <div class="partners-grid" id="partnersGrid">
+          <!-- Partner cards dynamically generated with JavaScript -->
+        </div>
+      </section>
+
+      <!-- Upcoming Study Sessions -->
+      <section class="upcoming-sessions">
+        <div class="section-header">
+          <h2>Upcoming Study Sessions</h2>
+          <button class="btn btn-outline" id="scheduleSessionBtn">
+            <i class="fas fa-calendar-plus"></i> Schedule Session
+          </button>
+        </div>
+        <div class="sessions-list" id="sessionsList">
+          <!-- Session items dynamically generated with JavaScript -->
+        </div>
+      </section>
+
+      <!-- Partner Recommendations -->
+      <section class="recommendations-section">
+        <div class="section-header">
+          <h2>Recommended Study Partners</h2>
+          <div class="recommendation-controls">
+            <button class="btn btn-icon" id="prevRecommendations">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="btn btn-icon" id="nextRecommendations">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="recommendations-slider" id="recommendationsSlider">
+          <!-- Recommendation cards dynamically generated with JavaScript -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Notification Center -->
+    <aside class="notification-center">
+      <div class="notification-header">
+        <h3>Notifications</h3>
+        <button class="btn btn-icon" id="closeNotifications">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="notifications-list" id="notificationsList">
+        <!-- Notifications dynamically generated with JavaScript -->
+      </div>
+    </aside>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal" id="scheduleModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Schedule Study Session</h2>
+        <button class="btn btn-icon close-modal">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="scheduleForm">
+          <div class="form-group">
+            <label for="sessionTitle">Session Title</label>
+            <input type="text" id="sessionTitle" placeholder="Enter session title">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sessionDate">Date</label>
+              <input type="date" id="sessionDate">
+            </div>
+            <div class="form-group">
+              <label for="sessionStartTime">Start Time</label>
+              <input type="time" id="sessionStartTime">
+            </div>
+            <div class="form-group">
+              <label for="sessionEndTime">End Time</label>
+              <input type="time" id="sessionEndTime">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="sessionSubject">Subject</label>
+            <select id="sessionSubject">
+              <option value="calculus">Calculus</option>
+              <option value="physics">Physics</option>
+              <option value="chemistry">Chemistry</option>
+              <option value="computerScience">Computer Science</option>
+              <option value="algebra">Algebra</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="sessionLocation">Location</label>
+            <div class="location-toggle">
+              <button type="button" class="btn-toggle active" data-location="virtual">Virtual</button>
+              <button type="button" class="btn-toggle" data-location="physical">Physical</button>
+            </div>
+            <input type="text" id="sessionLocation" placeholder="Zoom link or physical location" class="mt-2">
+          </div>
+          <div class="form-group">
+            <label>Invite Partners</label>
+            <div class="partner-selection" id="partnerSelection">
+              <!-- Partner selection options generated with JavaScript -->
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="sessionNotes">Session Notes</label>
+            <textarea id="sessionNotes" placeholder="Add any details or topics to cover"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn btn-outline close-modal">Cancel</button>
+            <button type="submit" class="btn btn-primary">Schedule Session</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="findPartnersModal">
+    <!-- Find partners modal content -->
+  </div>
+
+  <script src="../js/partners.js"></script>
+</body>
+</html>

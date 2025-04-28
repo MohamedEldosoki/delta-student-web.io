@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Delta Students</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <header>
+        <div class="container clearfix">
+            <a href="index.html" class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+                Admin Dashboard
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Dashboard</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li class="theme-toggle-container">
+                        <button class="theme-toggle" aria-label="Toggle dark mode">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                    <li><a href="#" class="btn btn-primary logout-btn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h2>Welcome to the Admin Dashboard</h2>
+                <p>Oversee and manage the Delta Students application with ease.</p>
+            </div>
+
+            <div class="dashboard-content">
+                <aside class="sidebar">
+                    <ul>
+                        <li class="active">
+                            <a href="#dashboard" aria-label="Dashboard">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 8v5"></path>
+                                </svg>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#users" aria-label="User Management">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                User Management
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#schedules" aria-label="Schedule Management">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                </svg>
+                                Schedule Management
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#subjects" aria-label="Subjects & Exams">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 22H18a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H6.5a2.5 2.5 0 0 1 0 5H6v12.5z"></path>
+                                </svg>
+                                Subjects & Exams
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#notifications" aria-label="Notifications">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                </svg>
+                                Notifications
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#analytics" aria-label="Analytics">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                                    <polyline points="17 6 23 6 23 12"></polyline>
+                                </svg>
+                                Analytics
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#reports" aria-label="Reports">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                </svg>
+                                Reports
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#settings" aria-label="Settings">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33h-3.3a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82v-3.3a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33h3.3a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06-.06a1.65 1.65 0 0 0-.33 1.82v3.3z"></path>
+                                </svg>
+                                Settings
+                            </a>
+                        </li>
+                    </ul>
+                </aside>
+
+                <div class="main-content">
+                    <section class="overview">
+                        <div class="overview-card" style="--card-index: 0;">
+                            <div class="card-icon blue"><i class="fas fa-users"></i></div>
+                            <h3>Total Registered Users</h3>
+                            <p class="value">5,450 Students</p>
+                            <p class="change positive"><i class="fas fa-arrow-up"></i> +5% from last month</p>
+                            <div class="progress-bar"><div class="progress-bar-fill blue" style="width: 75%;"></div></div>
+                        </div>
+                        <div class="overview-card" style="--card-index: 1;">
+                            <div class="card-icon green"><i class="fas fa-calendar-check"></i></div>
+                            <h3>Active Study Schedules</h3>
+                            <p class="value">1,200 Schedules</p>
+                            <p class="change positive"><i class="fas fa-arrow-up"></i> +10% this week</p>
+                            <div class="progress-bar"><div class="progress-bar-fill green" style="width: 60%;"></div></div>
+                        </div>
+                        <div class="overview-card" style="--card-index: 2;">
+                            <div class="card-icon orange"><i class="fas fa-book"></i></div>
+                            <h3>Subjects in the System</h3>
+                            <p class="value">350 Subjects</p>
+                            <p class="change negative"><i class="fas fa-arrow-down"></i> -2% this month</p>
+                            <div class="progress-bar"><div class="progress-bar-fill orange" style="width: 85%;"></div></div>
+                        </div>
+                        <div class="overview-card" style="--card-index: 3;">
+                            <div class="card-icon red"><i class="fas fa-exclamation-triangle"></i></div>
+                            <h3>Current System Alerts</h3>
+                            <p class="value">3 Alerts</p>
+                            <p class="change positive"><i class="fas fa-arrow-up"></i> +1 today</p>
+                            <div class="progress-bar"><div class="progress-bar-fill red" style="width: 20%;"></div></div>
+                        </div>
+                    </section>
+
+                    <section class="dashboard-sections">
+                        <article class="section-card" id="user-management">
+                            <div class="section-header">
+                                <h3>User Management</h3>
+                                <div class="actions">
+                                    <button class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add New User</button>
+                                </div>
+                            </div>
+                            <div class="data-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>User ID</th>
+                                            <th>Username</th>
+                                            <th>Email</th>
+                                            <th>Role</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#STUDENT001</td>
+                                            <td>studentUser</td>
+                                            <td><a href="mailto:student@example.com">student@example.com</a></td>
+                                            <td>Student</td>
+                                            <td><span class="status active">Active</span></td>
+                                            <td class="action-buttons">
+                                                <a href="#" title="View Details" aria-label="View User Details"><i class="fas fa-eye"></i></a>
+                                                <a href="#" title="Edit User" aria-label="Edit User"><i class="fas fa-edit"></i></a>
+                                                <a href="#" title="Delete User" aria-label="Delete User"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#ADMIN001</td>
+                                            <td>adminDelta</td>
+                                            <td><a href="mailto:admin@example.com">admin@example.com</a></td>
+                                            <td>Administrator</td>
+                                            <td><span class="status inactive">Inactive</span></td>
+                                            <td class="action-buttons">
+                                                <a href="#" title="View Details" aria-label="View User Details"><i class="fas fa-eye"></i></a>
+                                                <a href="#" title="Edit User" aria-label="Edit User"><i class="fas fa-edit"></i></a>
+                                                <a href="#" title="Delete User" aria-label="Delete User"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#TEACHER001</td>
+                                            <td>profJackson</td>
+                                            <td><a href="mailto:jackson@example.com">jackson@example.com</a></td>
+                                            <td>Teacher</td>
+                                            <td><span class="status active">Active</span></td>
+                                            <td class="action-buttons">
+                                                <a href="#" title="View Details" aria-label="View User Details"><i class="fas fa-eye"></i></a>
+                                                <a href="#" title="Edit User" aria-label="Edit User"><i class="fas fa-edit"></i></a>
+                                                <a href="#" title="Delete User" aria-label="Delete User"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="pagination">
+                                <button class="btn btn-secondary"><i class="fas fa-chevron-left"></i> Previous</button>
+                                <span>Page 1 of 5</span>
+                                <button class="btn btn-secondary">Next <i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </article>
+
+                        <article class="section-card" id="schedule-management">
+                            <div class="section-header">
+                                <h3>Schedule Management</h3>
+                                <div class="actions">
+                                    <button class="btn btn-primary"><i class="fas fa-plus-circle"></i> Create Schedule</button>
+                                </div>
+                            </div>
+                            <div class="data-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Schedule ID</th>
+                                            <th>Name</th>
+                                            <th>Owner</th>
+                                            <th>Created Date</th>
+                                            <th>Status</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#SCHD001</td>
+                                            <td>Midterm Prep - Fall 2023</td>
+                                            <td>studentUser</td>
+                                            <td>2023-08-15</td>
+                                            <td><span class="status active">Active</span></td>
+                                            <td class="action-buttons">
+                                                <a href="#" title="View Schedule" aria-label="View Schedule"><i class="fas fa-eye"></i></a>
+                                                <a href="#" title="Edit Schedule" aria-label="Edit Schedule"><i class="fas fa-edit"></i></a>
+                                                <a href="#" title="Delete Schedule" aria-label="Delete Schedule"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#SCHD002</td>
+                                            <td>Weekly Study Plan - CS101</td>
+                                            <td>adminDelta</td>
+                                            <td>2023-09-01</td>
+                                            <td><span class="status inactive">Inactive</span></td>
+                                            <td class="action-buttons">
+                                                <a href="#" title="View Schedule" aria-label="View Schedule"><i class="fas fa-eye"></i></a>
+                                                <a href="#" title="Edit Schedule" aria-label="Edit Schedule"><i class="fas fa-edit"></i></a>
+                                                <a href="#" title="Delete Schedule" aria-label="Delete Schedule"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#SCHD003</td>
+                                            <td>Final Exam Prep - Math</td>
+                                            <td>studentUser</td>
+                                            <td>2023-10-12</td>
+                                            <td><span class="status active">Active</span></td>
+                                            <td class="action-buttons">
+                                                <a href="#" title="View Schedule" aria-label="View Schedule"><i class="fas fa-eye"></i></a>
+                                                <a href="#" title="Edit Schedule" aria-label="Edit Schedule"><i class="fas fa-edit"></i></a>
+                                                <a href="#" title="Delete Schedule" aria-label="Delete Schedule"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="pagination">
+                                <button class="btn btn-secondary"><i class="fas fa-chevron-left"></i> Previous</button>
+                                <span>Page 1 of 3</span>
+                                <button class="btn btn-secondary">Next <i class="fas fa-chevron-right"></i></button>
+                            </div>
+                        </article>
+
+                        <article class="section-card" id="subjects-exams">
+                            <div class="section-header">
+                                <h3>Subjects & Exams Management</h3>
+                                <div class="actions">
+                                    <button class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add Subject</button>
+                                    <button class="btn btn-primary"><i class="fas fa-plus-circle"></i> Add Exam</button>
+                                </div>
+                            </div>
+                            <div class="data-list">
+                                <h4>Subjects</h4>
+                                <ul>
+                                    <li>
+                                        <a href="#" aria-label="Introduction to Computer Science">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 22H18a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H6.5a2.5 2.5 0 0 1 0 5H6v12.5z"></path>
+                                            </svg>
+                                            Introduction to Computer Science
+                                        </a>
+                                        <div class="list-actions">
+                                            <a href="#" title="Edit Subject" aria-label="Edit Subject"><i class="fas fa-edit"></i></a>
+                                            <a href="#" title="Delete Subject" aria-label="Delete Subject"><i class="fas fa-trash"></i></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="Calculus I">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 22H18a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H6.5a2.5 2.5 0 0 1 0 5H6v12.5z"></path>
+                                            </svg>
+                                            Calculus I
+                                        </a>
+                                        <div class="list-actions">
+                                            <a href="#" title="Edit Subject" aria-label="Edit Subject"><i class="fas fa-edit"></i></a>
+                                            <a href="#" title="Delete Subject" aria-label="Delete Subject"><i class="fas fa-trash"></i></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="Physics for Engineers">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 22H18a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H6.5a2.5 2.5 0 0 1 0 5H6v12.5z"></path>
+                                            </svg>
+                                            Physics for Engineers
+                                        </a>
+                                        <div class="list-actions">
+                                            <a href="#" title="Edit Subject" aria-label="Edit Subject"><i class="fas fa-edit"></i></a>
+                                            <a href="#" title="Delete Subject" aria-label="Delete Subject"><i class="fas fa-trash"></i></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="data-list">
+                                <h4>Exams</h4>
+                                <ul>
+                                    <li>
+                                        <a href="#" aria-label="CS101 Midterm Exam">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                                <polyline points="14 2 14 8 20 8"></polyline>
+                                            </svg>
+                                            CS101 Midterm Exam
+                                        </a> - Date: 2023-11-15
+                                        <div class="list-actions">
+                                            <a href="#" title="Edit Exam" aria-label="Edit Exam"><i class="fas fa-edit"></i></a>
+                                            <a href="#" title="Delete Exam" aria-label="Delete Exam"><i class="fas fa-trash"></i></a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="MATH101 Final Exam">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                                <polyline points="14 2 14 8 20 8"></polyline>
+                                            </svg>
+                                            MATH101 Final Exam
+                                        </a> - Date: 2023-12-10
+                                        <div class="list-actions">
+                                            <a href="#" title="Edit Exam" aria-label="Edit Exam"><i class="fas fa-edit"></i></a>
+                                            <a href="#" title="Delete Exam" aria-label="Delete Exam"><i class="fas fa-trash"></i></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="section-card" id="analytics-reports">
+                            <div class="section-header">
+                                <h3>Analytics & Reports</h3>
+                                <div class="actions">
+                                    <button class="btn btn-secondary generate-report-btn"><i class="fas fa-download"></i> Generate Reports</button>
+                                </div>
+                            </div>
+                            <div class="section-content">
+                                <div class="chart-container">
+                                    <canvas id="analyticsChart"></canvas>
+                                </div>
+                                <p>Detailed analytics and reports on system usage and student performance.</p>
+                            </div>
+                        </article>
+
+                        <article class="section-card" id="notification-management">
+                            <div class="section-header">
+                                <h3>Notification Management</h3>
+                                <div class="actions">
+                                    <button class="btn btn-primary"><i class="fas fa-bullhorn"></i> Send Notification</button>
+                                </div>
+                            </div>
+                            <div class="notification-list">
+                                <ul>
+                                    <li class="notification-item">
+                                        <i class="fas fa-bell notification-icon" aria-hidden="true"></i>
+                                        <div class="notification-text">
+                                            <h4>System Maintenance Scheduled</h4>
+                                            <p>Scheduled maintenance on 2023-11-20 at 10:00 PM PST.</p>
+                                            <span class="notification-date">Sent: 2023-11-18</span>
+                                        </div>
+                                        <div class="notification-actions">
+                                            <a href="#" title="View Notification" aria-label="View Notification"><i class="fas fa-eye"></i></a>
+                                            <a href="#" title="Edit Notification" aria-label="Edit Notification"><i class="fas fa-edit"></i></a>
+                                            <a href="#" title="Delete Notification" aria-label="Delete Notification"><i class="fas fa-trash"></i></a>
+                                        </div>
+                                    </li>
+                                    <li class="notification-item">
+                                        <i class="fas fa-exclamation-circle notification-icon" aria-hidden="true"></i>
+                                        <div class="notification-text">
+                                            <h4>New Feature Alert</h4>
+                                            <p>We've added new study tracking features to the platform!</p>
+                                            <span class="notification-date">Sent: 2023-11-10</span>
+                                        </div>
+                                        <div class="notification-actions">
+                                            <a href="#" title="View Notification" aria-label="View Notification"><i class="fas fa-eye"></i></a>
+                                            <a href="#" title="Edit Notification" aria-label="Edit Notification"><i class="fas fa-edit"></i></a>
+                                            <a href="#" title="Delete Notification" aria-label="Delete Notification"><i class="fas fa-trash"></i></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="section-card" id="system-settings">
+                            <div class="section-header">
+                                <h3>System Settings</h3>
+                                <div class="actions">
+                                    <button class="btn btn-secondary settings-btn"><i class="fas fa-wrench"></i> Settings</button>
+                                </div>
+                            </div>
+                            <div class="settings-list">
+                                <ul>
+                                    <li>
+                                        <a href="#" aria-label="Theme Settings">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <circle cx="12" cy="12" r="3"></circle>
+                                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33h-3.3a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82v-3.3a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33h3.3a1.65 1.65 0 0 0 1.82-.33l-.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v3.3z"></path>
+                                            </svg>
+                                            Theme Settings
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="Language Settings">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"></path>
+                                            </svg>
+                                            Language Settings
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="Notification Settings">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                            </svg>
+                                            Notification Settings
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" aria-label="User Permissions">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                            </svg>
+                                            User Permissions
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                    Admin Panel
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                &copy; 2025 Delta Students. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast container for notifications -->
+    <div class="toast-container"></div>
+    
+    <!-- Modal container for dialogs -->
+    <div class="modal-container" role="dialog" aria-modal="true" style="display: none;"></div>
+
+    <script src="../js/admin.js"></script>
+</body>
+</html>

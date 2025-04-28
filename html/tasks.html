@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks | Delta Students</title>
+    <link rel="stylesheet" href="../css/tasks.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-book-reader"></i>
+                <span>Delta Students</span>
+            </a>
+            
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="search" class="search-input" placeholder="Search...">
+            </div>
+            
+            <div class="header-tools">
+                <button class="notifications-toggle">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">99</span>
+                </button>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <!-- <li><a href="#" class="profile-btn">Profile</a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="dashboard">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="dashboard-header">
+                <div class="user-welcome">
+                    <h1 id="greeting">Good afternoon, Mohamed Eldosoki!!</h1>
+                    <p class="subtitle">Let's organize your tasks today</p>
+                </div>
+                
+                <div class="date-weather">
+                    <div class="current-date">
+                        <i class="fas fa-calendar-day"></i>
+                        <span id="current-date">Monday, April 7, 2025</span>
+                    </div>
+                    <div class="weather-widget">
+                        <i class="fas fa-cloud-sun"></i>
+                        <span>68°F</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="dashboard-content">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <nav class="sidebar-nav">
+                        <ul>
+                            <li><a href="index.html"><i class="fas fa-home"></i> Overview</a></li>
+                            <li><a href="schedule.html"><i class="fas fa-calendar-alt"></i> Schedule</a></li>
+                            <li class="active"><a href="tasks.html"><i class="fas fa-tasks"></i> Tasks</a></li>
+                            <li><a href="courses.html"><i class="fas fa-book"></i> Courses</a></li>
+                            <li><a href="partners.html"><i class="fas fa-users"></i> Study Partners</a></li>
+                            <li><a href="analytics.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                            <li><a href="resources.html"><i class="fas fa-bookmark"></i> Resources</a></li>
+                            <li><a href="settings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="study-stats">
+                        <h3>Study Statistics</h3>
+                        <div class="stat-item">
+                            <span class="stat-label">This Week</span>
+                            <span class="stat-value">15.5 hrs</span>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill blue" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Monthly Goal</span>
+                            <span class="stat-value">65%</span>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill green" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                        <a href="analytics.html" class="btn-text">View detailed statistics →</a>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Tasks Overview Section -->
+                    <section class="tasks-overview-section">
+                        <div class="overview-grid">
+                            <div class="overview-card">
+                                <h3>Tasks Overview</h3>
+                                <div class="metrics-container">
+                                    <div class="metric">
+                                        <span class="metric-value">12</span>
+                                        <span class="metric-label">Total</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">7</span>
+                                        <span class="metric-label">Completed</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">5</span>
+                                        <span class="metric-label">Upcoming</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">0</span>
+                                        <span class="metric-label">Overdue</span>
+                                    </div>
+                                    <div class="completion-circle">
+                                        <svg width="60" height="60" viewBox="0 0 60 60">
+                                            <circle class="circle-bg" cx="30" cy="30" r="25" stroke-width="5" fill="none"/>
+                                            <circle class="circle-progress" cx="30" cy="30" r="25" stroke-width="5" fill="none" 
+                                                stroke-dasharray="157" stroke-dashoffset="66"/>
+                                            <text x="30" y="35" text-anchor="middle" class="circle-text">58%</text>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Add Task Section -->
+                    <section class="add-task-section">
+                        <div class="add-task-container">
+                            <input type="text" id="new-task-input" placeholder="Add a new task...">
+                            <div class="add-task-dropdown">
+                                <select id="task-type">
+                                    <option value="default">General</option>
+                                    <option value="physics">programming</option>
+                                    <option value="chemistry">Operating system</option>
+                                    <option value="calculus">Doker</option>
+                                    <option value="history">math</option>
+                                </select>
+                            </div>
+                            <button id="add-task" class="btn btn-primary"><i class="fas fa-plus"></i> Add Task</button>
+                        </div>
+                    </section>
+
+                    <!-- Task Filters -->
+                    <section class="task-filters">
+                        <div class="filter-tabs">
+                            <button class="filter-tab active" data-filter="all">All Tasks</button>
+                            <button class="filter-tab" data-filter="today">Today</button>
+                            <button class="filter-tab" data-filter="week">This Week</button>
+                            <button class="filter-tab" data-filter="upcoming">Upcoming</button>
+                        </div>
+                        <div class="filter-actions">
+                            <div class="sort-dropdown">
+                                <select id="sort-tasks">
+                                    <option value="due-date">Sort by: Due Date ▼</option>
+                                    <option value="priority">Sort by: Priority</option>
+                                    <option value="name">Sort by: Name</option>
+                                    <option value="subject">Sort by: Subject</option>
+                                </select>
+                            </div>
+                            <div class="view-toggle">
+                                <button class="view-btn active" data-view="list"><i class="fas fa-list"></i></button>
+                                <button class="view-btn" data-view="kanban"><i class="fas fa-columns"></i></button>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Tasks List -->
+                    <section class="tasks-list-section">
+                        <div class="tasks-list-container">
+                            <ul id="task-list">
+                                <!-- High Priority Task -->
+                                <li class="task-item priority-high">
+                                    <div class="task-checkbox">
+                                        <input type="checkbox" id="task1">
+                                        <label for="task1"></label>
+                                    </div>
+                                    <div class="task-content">
+                                        <h4>programming Homework</h4>
+                                        <div class="task-meta">
+                                            <span class="task-tag physics">programming</span>
+                                            <span class="task-due"><i class="fas fa-calendar-alt"></i> Dec 5th (2 days left)</span>
+                                        </div>
+                                    </div>
+                                    <div class="task-priority">
+                                        <span class="priority-indicator"></span>
+                                    </div>
+                                    <div class="task-actions">
+                                        <button class="task-action-btn"><i class="fas fa-edit"></i></button>
+                                        <button class="task-action-btn"><i class="fas fa-trash-alt"></i></button>
+                                        <button class="task-action-btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    </div>
+                                </li>
+
+                                <!-- Medium Priority Task -->
+                                <li class="task-item priority-medium">
+                                    <div class="task-checkbox">
+                                        <input type="checkbox" id="task2">
+                                        <label for="task2"></label>
+                                    </div>
+                                    <div class="task-content">
+                                        <h4>the the kernel lab</h4>
+                                        <div class="task-meta">
+                                            <span class="task-tag chemistry">Operating system</span>
+                                            <span class="task-due"><i class="fas fa-calendar-alt"></i> Dec 7th (4 days left)</span>
+                                        </div>
+                                    </div>
+                                    <div class="task-priority">
+                                        <span class="priority-indicator"></span>
+                                    </div>
+                                    <div class="task-actions">
+                                        <button class="task-action-btn"><i class="fas fa-edit"></i></button>
+                                        <button class="task-action-btn"><i class="fas fa-trash-alt"></i></button>
+                                        <button class="task-action-btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    </div>
+                                </li>
+
+                                <!-- Medium Priority Task -->
+                                <li class="task-item priority-medium">
+                                    <div class="task-checkbox">
+                                        <input type="checkbox" id="task3">
+                                        <label for="task3"></label>
+                                    </div>
+                                    <div class="task-content">
+                                        <h4>Dockerize user</h4>
+                                        <div class="task-meta">
+                                            <span class="task-tag history">Doker</span>
+                                            <span class="task-due"><i class="fas fa-calendar-alt"></i> Dec 10th (7 days left)</span>
+                                        </div>
+                                    </div>
+                                    <div class="task-priority">
+                                        <span class="priority-indicator"></span>
+                                    </div>
+                                    <div class="task-actions">
+                                        <button class="task-action-btn"><i class="fas fa-edit"></i></button>
+                                        <button class="task-action-btn"><i class="fas fa-trash-alt"></i></button>
+                                        <button class="task-action-btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    </div>
+                                </li>
+
+                                <!-- Low Priority Task -->
+                                <li class="task-item priority-low">
+                                    <div class="task-checkbox">
+                                        <input type="checkbox" id="task4">
+                                        <label for="task4"></label>
+                                    </div>
+                                    <div class="task-content">
+                                        <h4>Review Week 5 Materials</h4>
+                                        <div class="task-meta">
+                                            <span class="task-tag general">General</span>
+                                            <span class="task-due"><i class="fas fa-calendar-alt"></i> Dec 12th (9 days left)</span>
+                                        </div>
+                                    </div>
+                                    <div class="task-priority">
+                                        <span class="priority-indicator"></span>
+                                    </div>
+                                    <div class="task-actions">
+                                        <button class="task-action-btn"><i class="fas fa-edit"></i></button>
+                                        <button class="task-action-btn"><i class="fas fa-trash-alt"></i></button>
+                                        <button class="task-action-btn"><i class="fas fa-ellipsis-v"></i></button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Additional Sections Grid -->
+                    <div class="dashboard-grid">
+                        <!-- Task Categories -->
+                        <section class="task-categories-section">
+                            <div class="section-header">
+                                <h3>Task Categories</h3>
+                            </div>
+                            <div class="categories-container">
+                                <div class="category-item">
+                                    <div class="category-name">Programming</div>
+                                    <div class="category-bar-container">
+                                        <div class="category-bar physics" style="width: 60%"></div>
+                                        <span class="category-count">3</span>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <div class="category-name">Operating system</div>
+                                    <div class="category-bar-container">
+                                        <div class="category-bar chemistry" style="width: 40%"></div>
+                                        <span class="category-count">2</span>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <div class="category-name">Doker</div>
+                                    <div class="category-bar-container">
+                                        <div class="category-bar history" style="width: 40%"></div>
+                                        <span class="category-count">2</span>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <div class="category-name">Math</div>
+                                    <div class="category-bar-container">
+                                        <div class="category-bar calculus" style="width: 20%"></div>
+                                        <span class="category-count">1</span>
+                                    </div>
+                                </div>
+                                <div class="category-item">
+                                    <div class="category-name">Other</div>
+                                    <div class="category-bar-container">
+                                        <div class="category-bar general" style="width: 40%"></div>
+                                        <span class="category-count">2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Upcoming Deadlines -->
+                        <section class="upcoming-deadlines-section">
+                            <div class="section-header">
+                                <h3>Upcoming Deadlines</h3>
+                            </div>
+                            <div class="mini-calendar">
+                                <div class="calendar-header">
+                                    <div class="day-name">MON</div>
+                                    <div class="day-name">TUE</div>
+                                    <div class="day-name">WED</div>
+                                    <div class="day-name">THU</div>
+                                    <div class="day-name">FRI</div>
+                                    <div class="day-name">SAT</div>
+                                    <div class="day-name">SUN</div>
+                                </div>
+                                <div class="calendar-days">
+                                    <div class="calendar-day">
+                                        <span class="day-number">5</span>
+                                        <span class="task-dot high"></span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="day-number">6</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="day-number">7</span>
+                                        <span class="task-dot medium"></span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="day-number">8</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="day-number">9</span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="day-number">10</span>
+                                        <span class="task-dot medium"></span>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <span class="day-number">11</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <section class="recent-activity-section">
+                        <div class="section-header">
+                            <h3>Recent Activity</h3>
+                            <a href="#" class="btn-text">View all activity →</a>
+                        </div>
+                        <div class="activity-timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-icon completed">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <p class="activity-text">Completed <strong>Biology Flashcards</strong></p>
+                                    <p class="activity-time">Today, 11:23 AM</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon added">
+                                    <i class="fas fa-plus"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <p class="activity-text">Added <strong>Review Week 5 Materials</strong></p>
+                                    <p class="activity-time">Today, 10:15 AM</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon edited">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                                <div class="timeline-content">
+                                    <p class="activity-text">Updated due date for <strong>Chemistry Lab Report</strong></p>
+                                    <p class="activity-time">Yesterday, 3:45 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-book-reader"></i>
+                    Delta Students
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Delta Students. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Task edit modal (hidden by default) -->
+    <div class="modal-container" id="task-edit-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Edit Task</h3>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-task-form">
+                    <div class="form-group">
+                        <label for="edit-task-title">Task Title</label>
+                        <input type="text" id="edit-task-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-task-subject">Subject</label>
+                        <select id="edit-task-subject" required>
+                            <option value="general">General</option>
+                            <option value="physics">Physics</option>
+                            <option value="chemistry">Chemistry</option>
+                            <option value="calculus">Calculus</option>
+                            <option value="history">History</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-task-due-date">Due Date</label>
+                        <input type="date" id="edit-task-due-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-task-priority">Priority</label>
+                        <select id="edit-task-priority" required>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-task-notes">Notes</label>
+                        <textarea id="edit-task-notes" rows="3"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary modal-cancel">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/tasks.js"></script>
+</body>
+</html>

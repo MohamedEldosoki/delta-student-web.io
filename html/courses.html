@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore programming courses and full-stack development roadmaps - Delta Students">
+    <title>Programming Courses | Delta Students</title>
+    <link rel="stylesheet" href="../css/courses.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Delta Students Dashboard">
+                <i class="fas fa-book-reader" aria-hidden="true"></i>
+                <span>Delta Students</span>
+            </a>
+            
+            <div class="search-container">
+                <i class="fas fa-search search-icon" aria-hidden="true"></i>
+                <input type="search" class="search-input" placeholder="Search courses..." aria-label="Search courses">
+                <button class="search-clear" aria-label="Clear search"><i class="fas fa-times" aria-hidden="true"></i></button>
+            </div>
+            
+            <div class="header-tools">
+                <button class="notifications-toggle" aria-label="Notifications" aria-haspopup="true">
+                    <i class="fas fa-bell" aria-hidden="true"></i>
+                    <span class="badge">3</span>
+                </button>
+                <!-- <button class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button> -->
+            </div>
+            
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav-menu">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+                <ul id="main-nav-menu">
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="calendar.html">Calendar</a></li>
+                    <li class="active"><a href="courses.html" aria-current="page">Courses</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <!-- <li><a href="#" class="profile-btn">Profile</a></li> -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="dashboard">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="dashboard-header">
+                <div class="user-welcome">
+                    <h1 id="greeting">Your Programming Journey</h1>
+                    <p class="subtitle">Crafting your path to becoming a full-stack developer</p>
+                </div>
+                
+                <div class="date-weather">
+                    <div class="current-date">
+                        <i class="fas fa-calendar-day" aria-hidden="true"></i>
+                        <span id="current-date">Tuesday, April 8, 2025</span>
+                    </div>
+                    <div class="weather-widget">
+                        <i class="fas fa-cloud-sun" aria-hidden="true"></i>
+                        <span>68°F</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="dashboard-content">
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <nav class="sidebar-nav" aria-label="Main navigation">
+                        <ul>
+                            <li><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Overview</a></li>
+                            <li><a href="schedule.html"><i class="fas fa-calendar-alt" aria-hidden="true"></i> Schedule</a></li>
+                            <li><a href="tasks.html"><i class="fas fa-tasks" aria-hidden="true"></i> Tasks</a></li>
+                            <li class="active"><a href="courses.html" aria-current="page"><i class="fas fa-book" aria-hidden="true"></i> Courses</a></li>
+                            <li><a href="../html/Learning-Partners.html"><i class="fas fa-users" aria-hidden="true"></i> Our Partners</a></li>
+                            <!-- <li><a href="analytics.html"><i class="fas fa-chart-line" aria-hidden="true"></i> Analytics</a></li>
+                            <li><a href="resources.html"><i class="fas fa-bookmark" aria-hidden="true"></i> Resources</a></li> -->
+                            <li><a href="settings.html"><i class="fas fa-cog" aria-hidden="true"></i> Settings</a></li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="learning-stats">
+                        <h3>Your Learning Stats</h3>
+                        <div class="stat-item">
+                            <span class="stat-label">Courses Completed</span>
+                            <span class="stat-value">5</span>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill blue" style="width: 42%;" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="stat-subtitle">42% of your roadmap</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Current Streak</span>
+                            <span class="stat-value">8 days</span>
+                            <div class="streak-calendar">
+                                <span class="streak-day active"></span>
+                                <span class="streak-day active"></span>
+                                <span class="streak-day active"></span>
+                                <span class="streak-day active"></span>
+                                <span class="streak-day active"></span>
+                                <span class="streak-day active"></span>
+                                <span class="streak-day active"></span>
+                                <span class="streak-day active"></span>
+                                <span class="streak-day"></span>
+                                <span class="streak-day"></span>
+                            </div>
+                        </div>
+                        <div class="badges-preview">
+                            <span class="badge-item" data-tooltip="JavaScript Fundamentals">
+                                <i class="fab fa-js" aria-hidden="true"></i>
+                            </span>
+                            <span class="badge-item" data-tooltip="HTML5 Master">
+                                <i class="fab fa-html5" aria-hidden="true"></i>
+                            </span>
+                            <span class="badge-item" data-tooltip="CSS3 Expert">
+                                <i class="fab fa-css3-alt" aria-hidden="true"></i>
+                            </span>
+                            <a href="badges.html" class="btn-text">View all earned badges →</a>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="main-content">
+                    <!-- Continue Learning Section -->
+                    <section class="continue-learning-section">
+                        <div class="section-header">
+                            <h2>Continue Learning</h2>
+                            <a href="#" class="btn-text">View all courses →</a>
+                        </div>
+                        
+                        <div class="continue-courses">
+                            <div class="continue-course-card">
+                                <div class="course-progress-indicator">
+                                    <svg viewBox="0 0 36 36">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="#eee" fill="none" stroke-width="3"/>
+                                        <path class="circle-progress" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="#007bff" fill="none" stroke-width="3" stroke-dasharray="100, 100" stroke-dashoffset="35"/>
+                                        <text x="18" y="20.35" class="percentage">65%</text>
+                                    </svg>
+                                </div>
+                                <div class="continue-course-info">
+                                    <h3>React - The Complete Guide</h3>
+                                    <p class="subtitle">Next: Component Lifecycle Methods</p>
+                                    <div class="course-meta">
+                                        <span><i class="far fa-clock" aria-hidden="true"></i> 25 min remaining in section</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-primary">Continue</a>
+                            </div>
+                            
+                            <div class="continue-course-card">
+                                <div class="course-progress-indicator">
+                                    <svg viewBox="0 0 36 36">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="#eee" fill="none" stroke-width="3"/>
+                                        <path class="circle-progress" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" stroke="#007bff" fill="none" stroke-width="3" stroke-dasharray="100, 100" stroke-dashoffset="72"/>
+                                        <text x="18" y="20.35" class="percentage">28%</text>
+                                    </svg>
+                                </div>
+                                <div class="continue-course-info">
+                                    <h3>Node.js API Masterclass</h3>
+                                    <p class="subtitle">Next: JWT Authentication</p>
+                                    <div class="course-meta">
+                                        <span><i class="far fa-clock" aria-hidden="true"></i> 40 min remaining in section</span>
+                                    </div>
+                                </div>
+                                <a href="#" class="btn btn-primary">Continue</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Roadmap Section -->
+                    <section class="roadmap-section">
+                        <div class="section-header">
+                            <h2 id="roadmap-heading">Full-Stack Developer Roadmap</h2>
+                            <div class="roadmap-actions">
+                                <button class="roadmap-toggle active" data-view="frontend"><i class="fas fa-desktop" aria-hidden="true"></i> Frontend</button>
+                                <button class="roadmap-toggle" data-view="backend"><i class="fas fa-server" aria-hidden="true"></i> Backend</button>
+                                <button class="roadmap-toggle" data-view="fullstack"><i class="fas fa-layer-group" aria-hidden="true"></i> Full-Stack</button>
+                            </div>
+                        </div>
+                        
+                        <div class="roadmap-container">
+                            <div class="roadmap-view active" id="frontend-roadmap">
+                                <div class="roadmap-path">
+                                    <div class="roadmap-milestone completed">
+                                        <div class="milestone-icon">
+                                            <i class="fab fa-html5" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="milestone-content">
+                                            <h3>HTML Fundamentals</h3>
+                                            <p>Structure, semantic elements, forms, and accessibility</p>
+                                            <div class="milestone-courses">
+                                                <a href="#" class="milestone-course completed" data-id="html101">
+                                                    <i class="fas fa-check-circle" aria-hidden="true"></i> HTML5 & Semantic Web
+                                                </a>
+                                            </div>
+                                            <span class="milestone-status completed">Completed</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="roadmap-milestone completed">
+                                        <div class="milestone-icon">
+                                            <i class="fab fa-css3-alt" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="milestone-content">
+                                            <h3>CSS & Design</h3>
+                                            <p>Styling, layouts, responsive design, and animations</p>
+                                            <div class="milestone-courses">
+                                                <a href="#" class="milestone-course completed" data-id="css101">
+                                                    <i class="fas fa-check-circle" aria-hidden="true"></i> CSS3 Essentials
+                                                </a>
+                                                <a href="#" class="milestone-course completed" data-id="css102">
+                                                    <i class="fas fa-check-circle" aria-hidden="true"></i> Advanced CSS & Sass
+                                                </a>
+                                            </div>
+                                            <span class="milestone-status completed">Completed</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="roadmap-milestone completed">
+                                        <div class="milestone-icon">
+                                            <i class="fab fa-js" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="milestone-content">
+                                            <h3>JavaScript Fundamentals</h3>
+                                            <p>Core concepts, DOM manipulation, and ES6+ features</p>
+                                            <div class="milestone-courses">
+                                                <a href="#" class="milestone-course completed" data-id="js101">
+                                                    <i class="fas fa-check-circle" aria-hidden="true"></i> JavaScript for Beginners
+                                                </a>
+                                                <a href="#" class="milestone-course completed" data-id="js102">
+                                                    <i class="fas fa-check-circle" aria-hidden="true"></i> Advanced JavaScript Concepts
+                                                </a>
+                                            </div>
+                                            <span class="milestone-status completed">Completed</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="roadmap-milestone in-progress">
+                                        <div class="milestone-icon">
+                                            <i class="fab fa-react" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="milestone-content">
+                                            <h3>Frontend Framework</h3>
+                                            <p>Modern JavaScript framework for building user interfaces</p>
+                                            <div class="milestone-courses">
+                                                <a href="#" class="milestone-course in-progress" data-id="react101">
+                                                    <i class="fas fa-spinner" aria-hidden="true"></i> React - The Complete Guide
+                                                </a>
+                                                <a href="#" class="milestone-course" data-id="react102">
+                                                    <i class="far fa-circle" aria-hidden="true"></i> Redux & React Hooks
+                                                </a>
+                                            </div>
+                                            <span class="milestone-status in-progress">In Progress (65%)</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="roadmap-milestone">
+                                        <div class="milestone-icon">
+                                            <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="milestone-content">
+                                            <h3>Frontend Mastery</h3>
+                                            <p>Performance optimization, testing, and advanced patterns</p>
+                                            <div class="milestone-courses">
+                                                <a href="#" class="milestone-course" data-id="fe101">
+                                                    <i class="far fa-circle" aria-hidden="true"></i> Frontend Performance Optimization
+                                                </a>
+                                                <a href="#" class="milestone-course" data-id="fe102">
+                                                    <i class="far fa-circle" aria-hidden="true"></i> Testing React Applications
+                                                </a>
+                                            </div>
+                                            <span class="milestone-status">Not Started</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="roadmap-view" id="backend-roadmap">
+                                <div class="roadmap-path">
+                                    <div class="roadmap-milestone">
+                                        <div class="milestone-icon">
+                                            <i class="fas fa-server" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="milestone-content">
+                                            <h3>Backend Fundamentals</h3>
+                                            <p>Server architecture, HTTP, and API design principles</p>
+                                            <div class="milestone-courses">
+                                                <a href="#" class="milestone-course" data-id="be101">
+                                                    <i class="far fa-circle" aria-hidden="true"></i> Backend Development Principles
+                                                </a>
+                                            </div>
+                                            <span class="milestone-status">Not Started</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="roadmap-milestone in-progress">
+                                        <div class="milestone-icon">
+                                            <i class="fab fa-node-js" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="milestone-content">
+                                            <h3>Node.js & Express</h3>
+                                            <p>Server-side JavaScript and RESTful API development</p>
+                                            <div class="milestone-courses">
+                                                <a href="#" class="milestone-course in-progress" data-id="node101">
+                                                    <i class="fas fa-spinner" aria-hidden="true"></i> Node.js API Masterclass
+                                                </a>
+                                            </div>
+                                            <span class="milestone-status in-progress">In Progress (28%)</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="roadmap-milestone">
+                                        <div class="milestone-icon">
+                                            <i class="fas fa-database" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="milestone-content">
+                                            <h3>Databases</h3>
+                                            <p>SQL, NoSQL, and database design</p>
+                                            <div class="milestone-courses">
+                                                <a href="#" class="milestone-course" data-id="db101">
+                                                    <i class="far fa-circle" aria-hidden="true"></i> SQL Database Essentials
+                                                </a>
+                                                <a href="#" class="milestone-course" data-id="db102">
+                                                    <i class="far fa-circle" aria-hidden="true"></i> MongoDB - The Complete Guide
+                                                </a>
+                                            </div>
+                                            <span class="milestone-status">Not Started</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="roadmap-milestone">
+                                        <div class="milestone-icon">
+                                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="milestone-content">
+                                            <h3>Authentication & Security</h3>
+                                            <p>User management, JWT, OAuth, and security best practices</p>
+                                            <div class="milestone-courses">
+                                                <a href="#" class="milestone-course" data-id="sec101">
+                                                    <i class="far fa-circle" aria-hidden="true"></i> Authentication & Authorization
+                                                </a>
+                                                <a href="#" class="milestone-course" data-id="sec102">
+                                                    <i class="far fa-circle" aria-hidden="true"></i> Web Security Fundamentals
+                                                </a>
+                                            </div>
+                                            <span class="milestone-status">Not Started</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="roadmap-view" id="fullstack-roadmap">
+                                <div class="roadmap-path">
+                                    <div class="roadmap-milestone">
+                                        <div class="milestone-icon">
+                                            <i class="fas fa-project-diagram" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="milestone-content">
+                                            <h3>Full-Stack Integration</h3>
+                                            <p>Connecting frontend and backend, data flow patterns</p>
+                                            <div class="milestone-courses">
+                                                <a href="#" class="milestone-course" data-id="fs101">
+                                                    <i class="far fa-circle" aria-hidden="true"></i> Full-Stack Architecture Patterns
+                                                </a>
+                                            </div>
+                                            <span class="milestone-status">Not Started</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="roadmap-milestone">
+                                        <div class="milestone-icon">
+                                            <i class="fas fa-cloud" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="milestone-content">
+                                            <h3>Deployment & DevOps</h3>
+                                            <p>CI/CD, cloud services, and production optimization</p>
+                                            <div class="milestone-courses">
+                                                <a href="#" class="milestone-course" data-id="dev101">
+                                                    <i class="far fa-circle" aria-hidden="true"></i> DevOps for Developers
+                                                </a>
+                                                <a href="#" class="milestone-course" data-id="dev102">
+                                                    <i class="far fa-circle" aria-hidden="true"></i> AWS for Web Developers
+                                                </a>
+                                            </div>
+                                            <span class="milestone-status">Not Started</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="roadmap-milestone">
+                                        <div class="milestone-icon">
+                                            <i class="fas fa-rocket" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="milestone-content">
+                                            <h3>Advanced Projects</h3>
+                                            <p>Real-world full-stack application development</p>
+                                            <div class="milestone-courses">
+                                                <a href="#" class="milestone-course" data-id="proj101">
+                                                    <i class="far fa-circle" aria-hidden="true"></i> MERN Stack Project - Social Media App
+                                                </a>
+                                                <a href="#" class="milestone-course" data-id="proj102">
+                                                    <i class="far fa-circle" aria-hidden="true"></i> E-Commerce Platform with Payment Integration
+                                                </a>
+                                            </div>
+                                            <span class="milestone-status">Not Started</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Courses Section (Redesigned) -->
+                    <section class="courses-section">
+                        <div class="section-header">
+                            <h2>Recommended Courses</h2>
+                            <div class="courses-filters">
+                                <div class="filter-dropdown">
+                                    <select id="filter-tech" aria-label="Filter by technology">
+                                        <option value="all">All Technologies</option>
+                                        <option value="javascript">JavaScript</option>
+                                        <option value="react">React</option>
+                                        <option value="node">Node.js</option>
+                                        <option value="python">Python</option>
+                                        <option value="database">Databases</option>
+                                    </select>
+                                </div>
+                                <div class="filter-dropdown">
+                                    <select id="filter-level" aria-label="Filter by level">
+                                        <option value="all">All Levels</option>
+                                        <option value="beginner">Beginner</option>
+                                        <option value="intermediate">Intermediate</option>
+                                        <option value="advanced">Advanced</option>
+                                    </select>
+                                </div>
+                                <div class="filter-dropdown">
+                                    <select id="sort-courses" aria-label="Sort courses">
+                                        <option value="recommended">Sort: Recommended</option>
+                                        <option value="popularity">Sort: Most Popular</option>
+                                        <option value="rating">Sort: Highest Rated</option>
+                                        <option value="newest">Sort: Newest</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="courses-grid" id="courses-list">
+                            <!-- Course 1 -->
+                            <div class="course-card" data-id="javascript-complete">
+                                <div class="course-image">
+                                    <img src="../pic/javascript.jpg" alt="JavaScript Course">
+                                    <span class="course-level beginner">Beginner</span>
+                                </div>
+                                <div class="course-body">
+                                    <div class="course-tags">
+                                        <span class="course-tag">javascript</span>
+                                        <span class="course-tag">web-development</span>
+                                        <span class="course-tag">frontend</span>
+                                    </div>
+                                    <h3 class="course-title">The Complete JavaScript Course 2025</h3>
+                                    <p class="course-instructor">Dr. Angela Bauer</p>
+                                    <p class="course-description">Master JavaScript with the most comprehensive course. Projects, challenges, and ES6+ features.</p>
+                                    <div class="course-meta">
+                                        <div class="course-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.8 (245.9k)</span>
+                                        </div>
+                                        <div class="course-students">
+                                            <i class="fas fa-user-graduate"></i>
+                                            <span>245,895 students</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-footer">
+                                    <div class="course-price">
+                                        <span class="original-price">$94.99</span> $16.99
+                                    </div>
+                                    <button class="course-wishlist" aria-label="Add to wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="course-actions">
+                                    <button class="btn btn-primary enroll-btn" data-id="javascript-complete">Enroll Now</button>
+                                </div>
+                            </div>
+
+                            <!-- Course 2 -->
+                            <div class="course-card" data-id="react-complete">
+                                <div class="course-image">
+                                    <img src="../pic/react.png" alt="React Course">
+                                    <span class="course-level intermediate">Intermediate</span>
+                                </div>
+                                <div class="course-body">
+                                    <div class="course-tags">
+                                        <span class="course-tag">react</span>
+                                        <span class="course-tag">javascript</span>
+                                        <span class="course-tag">frontend</span>
+                                    </div>
+                                    <h3 class="course-title">React - The Complete Guide</h3>
+                                    <p class="course-instructor">Maximilian Schwarzmüller</p>
+                                    <p class="course-description">Dive into React, Redux, React Hooks, and build powerful, responsive web applications.</p>
+                                    <div class="course-meta">
+                                        <div class="course-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.7 (189.3k)</span>
+                                        </div>
+                                        <div class="course-students">
+                                            <i class="fas fa-user-graduate"></i>
+                                            <span>189,320 students</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-footer">
+                                    <div class="course-price">
+                                        <span class="original-price">$119.99</span> $19.99
+                                    </div>
+                                    <button class="course-wishlist active" aria-label="Remove from wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="course-actions">
+                                    <button class="btn btn-primary enroll-btn" data-id="react-complete">Enroll Now</button>
+                                </div>
+                            </div>
+
+                            <!-- Course 3 -->
+                            <div class="course-card" data-id="node-api-masterclass">
+                                <div class="course-image">
+                                    <img src="../pic/node.png" alt="Node.js Course">
+                                    <span class="course-level intermediate">Intermediate</span>
+                                </div>
+                                <div class="course-body">
+                                    <div class="course-tags">
+                                        <span class="course-tag">node</span>
+                                        <span class="course-tag">javascript</span>
+                                        <span class="course-tag">backend</span>
+                                    </div>
+                                    <h3 class="course-title">Node.js API Masterclass</h3>
+                                    <p class="course-instructor">Brad Traversy</p>
+                                    <p class="course-description">Build extensive RESTful APIs with Node.js, Express, MongoDB, and more.</p>
+                                    <div class="course-meta">
+                                        <div class="course-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.9 (56.8k)</span>
+                                        </div>
+                                        <div class="course-students">
+                                            <i class="fas fa-user-graduate"></i>
+                                            <span>56,789 students</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-footer">
+                                    <div class="course-price">
+                                        <span class="original-price">$89.99</span> $14.99
+                                    </div>
+                                    <button class="course-wishlist" aria-label="Add to wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="course-actions">
+                                    <button class="btn btn-primary enroll-btn" data-id="node-api-masterclass">Enroll Now</button>
+                                </div>
+                            </div>
+
+                            <!-- Course 4 -->
+                            <div class="course-card" data-id="web-development-bootcamp">
+                                <div class="course-image">
+                                    <img src="../pic/web.jpg" alt="Web Development Bootcamp">
+                                    <span class="course-level beginner">Beginner</span>
+                                </div>
+                                <div class="course-body">
+                                    <div class="course-tags">
+                                        <span class="course-tag">html</span>
+                                        <span class="course-tag">css</span>
+                                        <span class="course-tag">javascript</span>
+                                    </div>
+                                    <h3 class="course-title">The Web Developer Bootcamp 2025</h3>
+                                    <p class="course-instructor">Colt Steele</p>
+                                    <p class="course-description">The only course you need to learn web development - HTML, CSS, JS, Node, and more!</p>
+                                    <div class="course-meta">
+                                        <div class="course-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.8 (736k)</span>
+                                        </div>
+                                        <div class="course-students">
+                                            <i class="fas fa-user-graduate"></i>
+                                            <span>735,986 students</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-footer">
+                                    <div class="course-price">
+                                        <span class="original-price">$149.99</span> $19.99
+                                    </div>
+                                    <button class="course-wishlist" aria-label="Add to wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="course-actions">
+                                    <button class="btn btn-primary enroll-btn" data-id="web-development-bootcamp">Enroll Now</button>
+                                </div>
+                            </div>
+
+                            <!-- Course 5 -->
+                            <div class="course-card" data-id="python-data-science">
+                                <div class="course-image">
+                                    <img src="../pic/Python-Libraries-in-Data-Science-1.jpg" alt="Python Data Science">
+                                    <span class="course-level intermediate">Intermediate</span>
+                                </div>
+                                <div class="course-body">
+                                    <div class="course-tags">
+                                        <span class="course-tag">python</span>
+                                        <span class="course-tag">data-science</span>
+                                        <span class="course-tag">machine-learning</span>
+                                    </div>
+                                    <h3 class="course-title">Python for Data Science and Machine Learning</h3>
+                                    <p class="course-instructor">Jose Portilla</p>
+                                    <p class="course-description">Learn Python, NumPy, Pandas, Matplotlib, and key machine learning algorithms.</p>
+                                    <div class="course-meta">
+                                        <div class="course-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.6 (185.6k)</span>
+                                        </div>
+                                        <div class="course-students">
+                                            <i class="fas fa-user-graduate"></i>
+                                            <span>185,632 students</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-footer">
+                                    <div class="course-price">
+                                        <span class="original-price">$129.99</span> $18.99
+                                    </div>
+                                    <button class="course-wishlist" aria-label="Add to wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="course-actions">
+                                    <button class="btn btn-primary enroll-btn" data-id="python-data-science">Enroll Now</button>
+                                </div>
+                            </div>
+
+                            <!-- Course 6 -->
+                            <div class="course-card" data-id="mongodb-complete">
+                                <div class="course-image">
+                                    <img src="../pic/MongoDB-2021.jpg" alt="MongoDB Course">
+                                    <span class="course-level intermediate">Intermediate</span>
+                                </div>
+                                <div class="course-body">
+                                    <div class="course-tags">
+                                        <span class="course-tag">mongodb</span>
+                                        <span class="course-tag">database</span>
+                                        <span class="course-tag">backend</span>
+                                    </div>
+                                    <h3 class="course-title">MongoDB - The Complete Developer's Guide</h3>
+                                    <p class="course-instructor">Maximilian Schwarzmüller</p>
+                                    <p class="course-description">Master MongoDB database development with comprehensive examples and projects.</p>
+                                    <div class="course-meta">
+                                        <div class="course-rating">
+                                            <i class="fas fa-star"></i>
+                                            <span>4.6 (75.3k)</span>
+                                        </div>
+                                        <div class="course-students">
+                                            <i class="fas fa-user-graduate"></i>
+                                            <span>75,321 students</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="course-footer">
+                                    <div class="course-price">
+                                        <span class="original-price">$94.99</span> $14.99
+                                    </div>
+                                    <button class="course-wishlist" aria-label="Add to wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                                <div class="course-actions">
+                                    <button class="btn btn-primary enroll-btn" data-id="mongodb-complete">Enroll Now</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="courses-pagination">
+                            <button class="btn-text" id="load-more-courses">
+                                <i class="fas fa-spinner" aria-hidden="true"></i> Load More Courses
+                            </button>
+                        </div>
+                    </section>
+                    
+                    <!-- Skills Assessment Section -->
+                    <section class="skills-assessment-section">
+                        <div class="section-header">
+                            <h2>Assess Your Skills</h2>
+                            <a href="#" class="btn-text">View all assessments →</a>
+                        </div>
+                        
+                        <div class="assessment-cards">
+                            <div class="assessment-card">
+                                <div class="assessment-icon">
+                                    <i class="fab fa-js" aria-hidden="true"></i>
+                                </div>
+                                <div class="assessment-content">
+                                    <h3>JavaScript Proficiency</h3>
+                                    <p>Test your JavaScript knowledge from basics to advanced topics</p>
+                                    <div class="assessment-meta">
+                                        <span><i class="fas fa-clock" aria-hidden="true"></i> 30 minutes</span>
+                                        <span><i class="fas fa-question-circle" aria-hidden="true"></i> 40 questions</span>
+                                    </div>
+                                </div>
+                                <!-- <a href="#" class="btn btn-secondary">Start Assessment</a> -->
+                            </div>
+                            
+                            <div class="assessment-card">
+                                <div class="assessment-icon">
+                                    <i class="fas fa-code" aria-hidden="true"></i>
+                                </div>
+                                <div class="assessment-content">
+                                    <h3>Coding Challenge</h3>
+                                    <p>Solve real-world programming problems to test your skills</p>
+                                    <div class="assessment-meta">
+                                        <span><i class="fas fa-clock" aria-hidden="true"></i> 45 minutes</span>
+                                        <span><i class="fas fa-code-branch" aria-hidden="true"></i> 5 challenges</span>
+                                    </div>
+                                </div>
+                                <!-- <a href="#" class="btn btn-secondary">Start Challenge</a> -->
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Course Detail Modal -->
+    <div class="modal-container" id="course-detail-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-title">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 id="modal-title">Course Details</h2>
+                <button class="modal-close" aria-label="Close modal"><i class="fas fa-times" aria-hidden="true"></i></button>
+            </div>
+            <div class="modal-body" id="course-detail-content">
+                <!-- Course details will be populated via JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary modal-close-btn">Close</button>
+                <button class="btn btn-primary enroll-btn">Enroll Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" aria-live="polite"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-book-reader" aria-hidden="true"></i>
+                    Delta Students
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Delta Students. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/courses.js"></script>
+</body>
+</html>
